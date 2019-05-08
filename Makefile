@@ -1,16 +1,16 @@
-SCLL=software-carpentry-lessons-learned
+STEM=lessons-learned
 CONVERT=pandoc
 
-all : ${SCLL}.html ${SCLL}.pdf
+all : ${STEM}.html ${STEM}.pdf
 
-${SCLL}.html : ${SCLL}.tex
+${STEM}.html : ${STEM}.tex
 	${CONVERT} --ascii -o $@ $<
 
-${SCLL}.pdf : ${SCLL}.tex ${SCLL}.bib
-	pdflatex ${SCLL}
-	bibtex ${SCLL}
-	pdflatex ${SCLL}
-	pdflatex ${SCLL}
+${STEM}.pdf : ${STEM}.tex ${STEM}.bib
+	pdflatex ${STEM}
+	bibtex ${STEM}
+	pdflatex ${STEM}
+	pdflatex ${STEM}
 
 clean :
-	@rm -f ${SCLL}.html ${SCLL}.aux ${SCLL}.log ${SCLL}.out ${SCLL}.pdf *~
+	@rm -f ${STEM}.html ${STEM}.aux ${STEM}.log ${STEM}.out ${STEM}.pdf *~
